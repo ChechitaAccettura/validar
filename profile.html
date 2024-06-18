@@ -18,6 +18,37 @@
       border-bottom: 1px solid #ddd;
     }
   </style>
+  <script>
+    // Obtener el ID del registro desde la URL
+    var urlParams = new URLSearchParams(window.location.search);
+    var registroId = urlParams.get("id");
+
+    var baseDatosUrl = "https://my-first-project-con-potrero-default-rtdb.firebaseio.com/";
+
+
+    if (!registroId) {
+      console.error('El parámetro "id" no está presente en la URL.');
+      // Aquí puedes manejar la situación donde el parámetro "id" no está presente.
+    } else {
+      console.log('ID del registro:', registroId);
+    }
+
+    // Obtener los datos del registro desde la API
+    var registroUrl = baseDatosUrl + "alumnos/" + registroId + ".json";
+    fetch(registroUrl)
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(data) {
+        document.getElementById("dni").innerText = data.dni || '';
+        document.getElementById("nombreyapellido").innerText = data.nombreyapellido || '';
+        document.getElementById("mail").innerText = data.mail || '';
+        document.getElementById("curso").innerText = data.curso || '';
+      })
+      .catch(function(error) {
+        console.error('Error al obtener los datos del registro:', error);
+      });
+  </script>
 </head>
 <body>
   <h1>Perfil</h1>
@@ -41,26 +72,5 @@
     </tr>
   </table>
 
-  <script>
-    // Obtener el ID del registro desde la URL
-    var urlParams = new URLSearchParams(window.location.search);
-    var registroId = urlParams.get("id");
-
-    // Obtener los datos del registro desde la API
-    var registroUrl = "https://my-first-project-con-potrero-default-rtdb.firebaseio.com/alumnos" + registroId + ".json";
-    fetch(registroUrl)
-      .then(function(response) {
-        return response.json();
-      })
-      .then(function(data) {
-        document.getElementById("dni").innerText = data.dni;
-        document.getElementById("nombreyapellido").innerText = data.nombreyapellido;
-        document.getElementById("mail").innerText = data.mail;
-        document.getElementById("curso").innerText = data.curso;
-      })
-      .catch(function(error) {
-        console.error(error);
-      });
-  </script>
 </body>
 </html>
