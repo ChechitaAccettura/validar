@@ -1,0 +1,126 @@
+
+body {
+    height: 100%;
+    overflow: hidden;
+    width: 100% !important;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    margin: 0 auto;
+    }
+
+    h1 {
+        position:relative;
+        margin-top: 25% !important;
+        margin-left: 20%;
+    }
+    .container{
+        display:flex;
+        background: none;
+        color: #eee;
+        box-shadow: none;
+    }
+
+    .left {
+        width: 50%;
+        height: 100%;
+        background: #2C3034;
+        left: 0;
+        position: absolute;
+    }
+    
+    .right {
+        width: 50%;
+        height: 100%;
+        background: #f9f9f9;
+        right: 0;
+        position: absolute;
+    }
+form{
+    position:relative;
+    margin-top: 15% !important;
+    max-width: 400px;
+    margin: 0 auto;
+    }
+
+label, input {
+    display: block;
+    margin-bottom: 10px;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    border-bottom: 1px solid #45494C;
+    font-size: 14px;
+    color: #959595;
+    padding: 8px 0;
+    margin-top: 10px;
+    }
+
+input[type="submit"]{
+    width: 50%;
+    height: 20%;
+    overflow: hidden;
+    position: relative;
+    margin-top: 20%;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    border-bottom: none;
+
+}
+
+#perfilButton {
+    display: block;
+    margin-top: 10px;
+    margin-left: 20%;
+    margin-bottom: 10px;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    border-bottom: 1px solid #45494C;
+    font-size: 14px;
+    color: #959595;
+    padding: 8px 0;
+}
+
+input[type="submit"]:hover{
+        box-shadow: 0 4px 7px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.1);
+    }
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    }
+    
+
+    #bienvenido {
+        width: 50%;
+        color: #45494C;
+        margin-top: 5% !important;
+
+    }
+
+    .card {
+        width: 30%;
+        background-color: #fff;
+        color: #000;
+        font-size: x-small;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px #000;
+        transition: all 0.3s ease-in-out;
+    }
+    .card:hover {
+        transform: scale(0.97);
+        box-shadow: 1px 1px 2px #faf7f7;
+    }
+    .card-title {
+        font-weight: bold;
+    }
+    
+    .card-text {
+        font-size: 18px;
+    }
+    
+    .card-img-top {
+        height: 200px;
+        object-fit: cover;
+    }
+
